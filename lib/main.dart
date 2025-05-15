@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sis_handicrafts_manager/pages/overview/page.dart';
+import 'package:sis_handicrafts_manager/pages/catalogues/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
-      home: const OverviewPage(title: 'Overview'),
+      home: const OverviewPage(title: 'Catalogi'),
     );
   }
 }
