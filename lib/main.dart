@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
-      home: const OverviewPage(title: 'Catalogi'),
+      home: const CataloguesPage(),
     );
   }
 }

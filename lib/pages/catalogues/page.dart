@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:sis_handicrafts_manager/pages/catalogues/catalogue_listitem.dart';
+import 'package:sis_handicrafts_manager/pages/collections/page.dart';
 import 'package:sis_handicrafts_manager/types/catalogue.dart';
 
-class OverviewPage extends StatefulWidget {
-  const OverviewPage({super.key, required this.title});
-
-  final String title;
+class CataloguesPage extends StatefulWidget {
+  const CataloguesPage({super.key});
 
   @override
-  State<OverviewPage> createState() => _OverviewPageState();
+  State<CataloguesPage> createState() => _CataloguesPageState();
 }
 
-class _OverviewPageState extends State<OverviewPage> {
+class _CataloguesPageState extends State<CataloguesPage> {
   // TODO: Change for data from firebase DB call.
   final List<Catalogue> _catalogues = <Catalogue>[
     Catalogue('abc', 'Knitting'),
@@ -51,7 +50,7 @@ class _OverviewPageState extends State<OverviewPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text('Catalogi'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -64,8 +63,11 @@ class _OverviewPageState extends State<OverviewPage> {
             for (var catalogue in _catalogues)
               InkWell(
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Tapped item ${catalogue.name}')),
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder:
+                          (context) => CollectionsPage(catalogue: catalogue),
+                    ),
                   );
                 },
                 child: CatalogueListItem(catalogue: catalogue),
