@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sis_handicrafts_manager/components/image_card.dart';
 import 'package:sis_handicrafts_manager/types/catalogue.dart';
 
 class CatalogueListItem extends StatelessWidget {
@@ -8,9 +9,9 @@ class CatalogueListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return SizedBox(
-      child: Placeholder(child: Center(child: Text(catalogue.name))),
+    return ImageCard(
+      image: const Image(image: AssetImage('assets/images/yarn-ball.jpg')),
+      text: catalogue.name,
     );
   }
 }
