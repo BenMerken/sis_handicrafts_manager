@@ -39,9 +39,17 @@ class _CataloguesPageState extends State<CataloguesPage> {
     Catalogue('abc', 'Embroidery'),
   ];
 
+  void _onCatalogueTapped(Catalogue catalogue) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => CollectionsPage(catalogue: catalogue),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    void createNewCollection() {
+    void createNewCatalogue() {
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(const SnackBar(content: Text('Coming soon!')));
@@ -62,22 +70,15 @@ class _CataloguesPageState extends State<CataloguesPage> {
           children: [
             for (var catalogue in _catalogues)
               InkWell(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder:
-                          (context) => CollectionsPage(catalogue: catalogue),
-                    ),
-                  );
-                },
+                onTap: () => _onCatalogueTapped(catalogue),
                 child: CatalogueListItem(catalogue: catalogue),
               ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: createNewCollection,
-        tooltip: 'Add a new collection',
+        onPressed: createNewCatalogue,
+        tooltip: 'Nieuwe catalogus aanmaken',
         child: const Icon(Icons.add),
       ),
     );

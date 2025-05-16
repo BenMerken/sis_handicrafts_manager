@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sis_handicrafts_manager/pages/collections/collection_listitem.dart';
+import 'package:sis_handicrafts_manager/pages/collections/detail/page.dart';
 import 'package:sis_handicrafts_manager/types/catalogue.dart';
 import 'package:sis_handicrafts_manager/types/collection.dart';
 
@@ -15,11 +16,19 @@ class CollectionsPage extends StatefulWidget {
 class _CollectionsPageState extends State<CollectionsPage> {
   // TODO: Change for data from firebase DB call.
   final List<Collection> _collections = <Collection>[
-    Collection('abc', 'Winter collection 2025', null, 0, [], []),
-    Collection('abc', 'Spring collection 2025', null, 0, [], []),
-    Collection('abc', 'Summer collection 2025', null, 0, [], []),
-    Collection('abc', 'Autumn collection 2025', null, 0, [], []),
+    Collection('abc', 'Winter collection 2025'),
+    Collection('abc', 'Spring collection 2025'),
+    Collection('abc', 'Summer collection 2025'),
+    Collection('abc', 'Autumn collection 2025'),
   ];
+
+  void _navigateToCollectionDetail(Collection collection) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => CollectionDetailPage(collection: collection),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +53,7 @@ class _CollectionsPageState extends State<CollectionsPage> {
           children: [
             for (var collection in _collections)
               InkWell(
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Tapped item ${collection.name}')),
-                  );
-                },
+                onTap: () => _navigateToCollectionDetail(collection),
                 child: CollectionListItem(collection: collection),
               ),
           ],
