@@ -1,9 +1,12 @@
 class Collection {
   final String id;
   final String name;
-  final int rating = 0;
+  final double rating = 0;
   final bool finished = false;
-  final String? magazine = null;
+  final String magazine = '';
+  final String implementation = '';
+  final String implementationNumber = '';
+  final List<String> sizes = [];
   final List<String> categories = [];
   final List<String> imageUrls = [];
 
