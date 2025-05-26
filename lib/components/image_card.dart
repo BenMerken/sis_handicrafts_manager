@@ -8,7 +8,12 @@ class ImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Card(
+      elevation: 5,
+      color: theme.cardColor,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -18,8 +23,12 @@ class ImageCard extends StatelessWidget {
               image: AssetImage('assets/images/yarn-ball.jpg'),
             ),
           ),
-          Center(
-            child: Container(padding: EdgeInsets.all(8), child: Text(text)),
+          Container(
+            padding: EdgeInsets.all(8),
+            child: Text(
+              text,
+              style: TextStyle(color: theme.colorScheme.onSurface),
+            ),
           ),
         ],
       ),

@@ -46,7 +46,7 @@ class _CollectionsPageState extends State<CollectionsPage> {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: GridView.count(
-          crossAxisCount: 3,
+          crossAxisCount: 2,
           padding: EdgeInsets.all(8.0),
           mainAxisSpacing: 20.0,
           crossAxisSpacing: 20.0,

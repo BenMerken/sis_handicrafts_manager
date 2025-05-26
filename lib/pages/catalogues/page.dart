@@ -63,7 +63,7 @@ class _CataloguesPageState extends State<CataloguesPage> {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: GridView.count(
-          crossAxisCount: 3,
+          crossAxisCount: 2,
           padding: EdgeInsets.all(8.0),
           mainAxisSpacing: 20.0,
           crossAxisSpacing: 20.0,
