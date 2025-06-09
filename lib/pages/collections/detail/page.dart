@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sis_handicrafts_manager/components/rating.dart';
 import 'package:sis_handicrafts_manager/pages/collections/detail/edit_collection_form.dart';
-import 'package:sis_handicrafts_manager/types/collection.dart';
+import 'package:sis_handicrafts_manager/domain/models/collection/collection.dart';
 
 class CollectionDetailPage extends StatefulWidget {
   const CollectionDetailPage({super.key, required this.collection});

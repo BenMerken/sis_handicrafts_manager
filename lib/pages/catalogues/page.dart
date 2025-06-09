@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sis_handicrafts_manager/pages/catalogues/catalogue_listitem.dart';
 import 'package:sis_handicrafts_manager/pages/collections/page.dart';
-import 'package:sis_handicrafts_manager/types/catalogue.dart';
+import 'package:sis_handicrafts_manager/domain/models/catalogue/catalogue.dart';
 
 class CataloguesPage extends StatefulWidget {
   const CataloguesPage({super.key});
