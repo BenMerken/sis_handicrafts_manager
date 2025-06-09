@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:sis_handicrafts_manager/pages/catalogues/catalogue_listitem.dart';
-import 'package:sis_handicrafts_manager/pages/collections/page.dart';
+import 'package:sis_handicrafts_manager/ui/catalogues_overview/widgets/catalogue_listitem.dart';
+import 'package:sis_handicrafts_manager/ui/collections_overview/widgets/collections_overview_screen.dart';
 import 'package:sis_handicrafts_manager/domain/models/catalogue/catalogue.dart';
 
-class CataloguesPage extends StatefulWidget {
-  const CataloguesPage({super.key});
+class CataloguesOverviewScreen extends StatefulWidget {
+  const CataloguesOverviewScreen({super.key});
 
   @override
-  State<CataloguesPage> createState() => _CataloguesPageState();
+  State<CataloguesOverviewScreen> createState() =>
+      _CataloguesOverviewScreenState();
 }
 
-class _CataloguesPageState extends State<CataloguesPage> {
+class _CataloguesOverviewScreenState extends State<CataloguesOverviewScreen> {
   // TODO: Change for data from firebase DB call.
   final List<Catalogue> _catalogues = <Catalogue>[
     Catalogue('abc', 'Knitting'),
@@ -42,7 +43,7 @@ class _CataloguesPageState extends State<CataloguesPage> {
   void _onCatalogueTapped(Catalogue catalogue) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => CollectionsPage(catalogue: catalogue),
+        builder: (context) => CollectionsOverviewScreen(catalogue: catalogue),
       ),
     );
   }

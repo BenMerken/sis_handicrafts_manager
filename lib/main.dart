@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sis_handicrafts_manager/pages/catalogues/page.dart';
-import 'package:sis_handicrafts_manager/themes/input_theme.dart';
+import 'package:sis_handicrafts_manager/ui/catalogues_overview/widgets/catalogues_overview_screen.dart';
+import 'package:sis_handicrafts_manager/ui/core/themes/input_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         inputDecorationTheme:
             InputTheme(appColorScheme: appColorScheme).theme(),
       ),
-      home: const CataloguesPage(),
+      home: const CataloguesOverviewScreen(),
     );
   }
 }

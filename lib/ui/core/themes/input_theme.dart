@@ -22,6 +22,7 @@ class InputTheme {
     enabledBorder: _buildBorder(appColorScheme.secondary),
     focusedBorder: _buildBorder(appColorScheme.primary),
     errorBorder: _buildBorder(appColorScheme.errorContainer),
-    disabledBorder: _buildBorder(Colors.grey),
+    focusedErrorBorder: _buildBorder(appColorScheme.error),
+    disabledBorder: _buildBorder(Colors.grey[400]!),
   );
 }

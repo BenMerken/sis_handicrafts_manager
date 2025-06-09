@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:sis_handicrafts_manager/components/rating.dart';
-import 'package:sis_handicrafts_manager/pages/collections/detail/edit_collection_form.dart';
+import 'package:sis_handicrafts_manager/ui/core/ui/rating.dart';
+import 'package:sis_handicrafts_manager/ui/collection_detail/widgets/edit_collection_form.dart';
 import 'package:sis_handicrafts_manager/domain/models/collection/collection.dart';
 
-class CollectionDetailPage extends StatefulWidget {
-  const CollectionDetailPage({super.key, required this.collection});
+class CollectionDetailScreen extends StatefulWidget {
+  const CollectionDetailScreen({super.key, required this.collection});
 
   final Collection collection;
 
   @override
-  State<CollectionDetailPage> createState() => _CollectionDetailPageState();
+  State<CollectionDetailScreen> createState() => _CollectionDetailScreenState();
 }
 
-class _CollectionDetailPageState extends State<CollectionDetailPage> {
+class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

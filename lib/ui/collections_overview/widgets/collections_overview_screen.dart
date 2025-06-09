@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:sis_handicrafts_manager/pages/collections/collection_listitem.dart';
-import 'package:sis_handicrafts_manager/pages/collections/detail/page.dart';
+import 'package:sis_handicrafts_manager/ui/collections_overview/widgets/collection_listitem.dart';
+import 'package:sis_handicrafts_manager/ui/collection_detail/widgets/collection_detail_screen.dart';
 import 'package:sis_handicrafts_manager/domain/models/catalogue/catalogue.dart';
 import 'package:sis_handicrafts_manager/domain/models/collection/collection.dart';
 
-class CollectionsPage extends StatefulWidget {
-  const CollectionsPage({super.key, required this.catalogue});
+class CollectionsOverviewScreen extends StatefulWidget {
+  const CollectionsOverviewScreen({super.key, required this.catalogue});
 
   final Catalogue catalogue;
 
   @override
-  State<CollectionsPage> createState() => _CollectionsPageState();
+  State<CollectionsOverviewScreen> createState() =>
+      _CollectionsOverviewScreenState();
 }
 
-class _CollectionsPageState extends State<CollectionsPage> {
+class _CollectionsOverviewScreenState extends State<CollectionsOverviewScreen> {
   // TODO: Change for data from firebase DB call.
   final List<Collection> _collections = <Collection>[
     Collection('abc', 'Winter collection 2025'),
@@ -25,7 +26,7 @@ class _CollectionsPageState extends State<CollectionsPage> {
   void _navigateToCollectionDetail(Collection collection) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => CollectionDetailPage(collection: collection),
+        builder: (context) => CollectionDetailScreen(collection: collection),
       ),
     );
   }

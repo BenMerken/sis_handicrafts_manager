@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sis_handicrafts_manager/components/forms/validators/text/text_input_validators.dart';
-import 'package:sis_handicrafts_manager/components/forms/validators/validators.dart';
+import 'package:sis_handicrafts_manager/utils/forms/validators/text/text_input_validators.dart';
+import 'package:sis_handicrafts_manager/utils/forms/validators/validators.dart';
 import 'package:sis_handicrafts_manager/domain/models/collection/collection.dart';
 
 class EditCollectionForm extends StatefulWidget {
