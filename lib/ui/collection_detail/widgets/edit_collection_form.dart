@@ -20,7 +20,7 @@ class EditCollectionForm extends StatefulWidget {
 class _EditCollectionFormState extends State<EditCollectionForm> {
   final _formKey = GlobalKey<FormState>();
 
-  _processForm() {
+  void _processForm() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
     }
